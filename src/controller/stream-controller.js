@@ -888,7 +888,7 @@ class StreamController extends EventHandler {
         logger.log(`Demuxing ${sn} of [${details.startSN} ,${details.endSN}],level ${level}, cc ${fragCurrent.cc}`);
         let demuxer = this.demuxer;
         if (demuxer) {
-          demuxer.push(data.payload, audioCodec, currentLevel.videoCodec, start, fragCurrent.cc, level, sn, duration, fragCurrent.decryptdata);
+          demuxer.push(data.payload, audioCodec, currentLevel.videoCodec, start, fragCurrent, level, sn, duration);
         }
       }
     }
